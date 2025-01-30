@@ -40,3 +40,21 @@ chmod 755 ./wrk/measure_all.sh
 
 python3 ./wrk/graph.py
 ``````
+
+# 测试报告
+
+## 设备1
+### 硬件信息
+========== CPU Info ==========
+Model name:                           Intel(R) Core(TM) i5-10200H CPU @ 2.40GHz
+Thread(s) per core:                   2
+Core(s) per socket:                   4
+Socket(s):                            1
+
+========== Memory Info ==========
+
+23GB RAM
+
+### 性能报告
+![req_per_sec](./doc/test_result/req_per_sec_graph.png)
+![xfer_per_sec](./doc/test_result/xfer_per_sec_graph.png)
