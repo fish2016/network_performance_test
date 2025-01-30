@@ -46,6 +46,7 @@ python3 ./wrk/graph.py
 ## 设备1
 ### 硬件信息
 ========== CPU Info ==========
+
 Model name:                           Intel(R) Core(TM) i5-10200H CPU @ 2.40GHz
 Thread(s) per core:                   2
 Core(s) per socket:                   4
