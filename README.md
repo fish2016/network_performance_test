@@ -9,6 +9,10 @@
 
 
 ## 准备工作
+
+### 安装wrk
+
+### 配置脚本权限
 ``````
 chmod 755 ./wrk/measure.sh
 chmod 755 ./wrk/measure_all.sh
@@ -27,4 +31,12 @@ chmod 755 ./wrk/measure_all.sh
 
 ``````
 ./wrk/measure_all.sh
+``````
+
+
+## 输出统计图表
+``````
+./wrk/measure_all.sh //需要先执行一遍全量性能测试（会产生测试xxx.perlog文件，graph.py会根据perlog文件输出图表）
+
+python3 ./wrk/graph.py
 ``````
