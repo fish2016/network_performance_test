@@ -1,4 +1,4 @@
-module go_fasthttp
+module go-fasthttp
 
 go 1.21.13
 
