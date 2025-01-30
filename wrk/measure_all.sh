@@ -14,7 +14,9 @@ if [ "$SUBJECTS" = "README" ] ; then
 fi
 
 if [ -z "$SUBJECTS" ] ; then
-    SUBJECTS="zig-zap go python python-sanic rust-bythebook rust-bythebook-improved rust-clean rust-axum csharp cpp-beast"
+    # SUBJECTS="zig-zap go python python-sanic rust-bythebook rust-bythebook-improved rust-clean rust-axum csharp cpp-beast"
+    # SUBJECTS="go python python-sanic rust-bythebook rust-bythebook-improved rust-clean rust-axum csharp cpp-beast"
+    SUBJECTS="go_fasthttp"
 fi
 
 for S in $SUBJECTS; do
