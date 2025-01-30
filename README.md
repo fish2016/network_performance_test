@@ -56,5 +56,6 @@ Socket(s):                            1
 23GB RAM
 
 ### 性能报告
-![req_per_sec](./doc/test_result/req_per_sec_graph.png)
-![xfer_per_sec](./doc/test_result/xfer_per_sec_graph.png)
+### 性能报告
+![req_per_sec](https://github.com/fish2016/network_performance_test/blob/main/doc/test_result/req_per_sec_graph.png?raw=true)
+![xfer_per_sec](https://github.com/fish2016/network_performance_test/blob/main/doc/test_result/xfer_per_sec_graph.png?raw=true)
