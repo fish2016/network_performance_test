@@ -12,6 +12,23 @@
 
 ### 安装wrk
 
+``````
+sudo apt update
+sudo apt install build-essential libssl-dev git
+``````
+
+``````
+git clone https://github.com/wg/wrk.git
+cd wrk
+make
+sudo cp wrk /usr/local/bin/
+wrk --version
+
+``````
+### 安装编译、运行环境
+如go、rust等编译、运行环境请自行安装
+TODO: 原项目支持在shell.nix隔离环境运行测试程序，但本项目未移此功能过来
+
 ### 配置脚本权限
 ``````
 chmod 755 ./wrk/measure.sh
@@ -25,6 +42,8 @@ chmod 755 ./wrk/measure_all.sh
 ``````
 ./wrk/measure.sh go
 ``````
+
+
 
 ## 全部测试
 启动测试wrk目录下的所有测试对象
