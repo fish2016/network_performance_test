@@ -81,3 +81,4 @@ Socket(s):                            1
 ### 性能报告
 ![req_per_sec](https://github.com/fish2016/network_performance_test/blob/main/doc/test_result/req_per_sec_graph.png?raw=true)
 ![xfer_per_sec](https://github.com/fish2016/network_performance_test/blob/main/doc/test_result/xfer_per_sec_graph.png?raw=true)
+![avg_delay](https://github.com/fish2016/network_performance_test/blob/main/doc/test_result/avg_delay_graph.png?raw=true)
