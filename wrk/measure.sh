@@ -42,6 +42,13 @@ if [ "$SUBJECT" = "go-fasthttp" ] ; then
     URL=http://127.0.0.1:8090/hello
 fi
 
+if [ "$SUBJECT" = "go-uringnet" ] ; then
+    cd wrk/go-uringnet && go mod tidy && go build main.go
+    $TSK_SRV ./main 127.0.0.1:8090 &
+    PID=$!
+    URL=http://127.0.0.1:8090
+fi
+
 if [ "$SUBJECT" = "go-gnet" ] ; then
     cd wrk/go-gnet && go mod tidy && go build main.go
     $TSK_SRV ./main &
