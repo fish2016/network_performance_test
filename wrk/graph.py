@@ -106,5 +106,5 @@ if __name__ == '__main__':
     plot(kind='xfer_per_sec', title='Transfer/sec Comparison',
          ylabel='transfer/sec [MB]', means=mean_transfers)
 
-    plot(kind='delay', title='Delay Comparison',
-         ylabel='delay [us]', means=mean_delay, desc=False)         
+    plot(kind='avg_delay', title='Avg Delay Comparison',
+         ylabel='avg delay [us]', means=mean_delay, desc=False)         
