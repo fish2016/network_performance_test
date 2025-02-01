@@ -5,9 +5,9 @@ import (
 	"io"
 	"net/http"
 	_ "net/http/pprof"
-	"runtime"
-	"sync/atomic"
-	"time"
+	"os"
+	"os/signal"
+	"syscall"
 
 	"github.com/lesismal/nbio/nbhttp"
 )
@@ -23,9 +23,10 @@ func onEcho(w http.ResponseWriter, r *http.Request) {
 	if len(data) > 0 {
 		w.Write(data)
 	} else {
-		w.Write([]byte(time.Now().Format("20060102 15:04:05")))
+		// w.Write([]byte(time.Now().Format("20060102 15:04:05")))
+		w.Write(data)
 	}
-	atomic.AddUint64(&qps, 1)
+	// atomic.AddUint64(&qps, 1)
 }
 
 func main() {
@@ -34,7 +35,7 @@ func main() {
 
 	svr := nbhttp.NewEngine(nbhttp.Config{
 		Network: "tcp",
-		Addrs:   []string{"localhost:3000"},
+		Addrs:   []string{"localhost:8090"},
 		Handler: mux,
 	}) // pool.Go)
 
@@ -45,11 +46,15 @@ func main() {
 	}
 	defer svr.Stop()
 
-	ticker := time.NewTicker(time.Second)
-	for i := 1; true; i++ {
-		<-ticker.C
-		n := atomic.SwapUint64(&qps, 0)
-		total += n
-		fmt.Printf("running for %v seconds, NumGoroutine: %v, qps: %v, total: %v\n", i, runtime.NumGoroutine(), n, total)
-	}
+	ch := make(chan os.Signal)
+	signal.Notify(ch, syscall.SIGQUIT, syscall.SIGTERM, syscall.SIGINT)
+	<-ch
+
+	// ticker := time.NewTicker(time.Second)
+	// for i := 1; true; i++ {
+	// 	<-ticker.C
+	// 	n := atomic.SwapUint64(&qps, 0)
+	// 	total += n
+	// 	fmt.Printf("running for %v seconds, NumGoroutine: %v, qps: %v, total: %v\n", i, runtime.NumGoroutine(), n, total)
+	// }
 }

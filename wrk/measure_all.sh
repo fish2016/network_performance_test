@@ -16,8 +16,9 @@ fi
 if [ -z "$SUBJECTS" ] ; then
     # SUBJECTS="zig-zap go python python-sanic rust-bythebook rust-bythebook-improved rust-clean rust-axum csharp cpp-beast"
     # SUBJECTS="go python python-sanic rust-bythebook rust-bythebook-improved rust-clean rust-axum csharp cpp-beast"
-    SUBJECTS="zig-zap go python python-sanic rust-bythebook rust-bythebook-improved rust-clean rust-axum"
+    # SUBJECTS="zig-zap go python python-sanic rust-bythebook rust-bythebook-improved rust-clean rust-axum"
     # SUBJECTS="go-fasthttp go-gnet go-uringnet"
+    SUBJECTS="go-nbio"
 fi
 
 for S in $SUBJECTS; do

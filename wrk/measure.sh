@@ -56,6 +56,13 @@ if [ "$SUBJECT" = "go-gnet" ] ; then
     URL=http://127.0.0.1:8090/hello
 fi
 
+if [ "$SUBJECT" = "go-nbio" ] ; then
+    cd wrk/go-nbio && go mod tidy && go build main.go
+    $TSK_SRV ./main &
+    PID=$!
+    URL=http://127.0.0.1:8090/echo
+fi
+
 if [ "$SUBJECT" = "python" ] ; then
     $TSK_SRV python wrk/python/main.py &
     PID=$!
